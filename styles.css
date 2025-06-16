@@ -241,6 +241,10 @@ h1, h2, h3, h4 {
     margin-bottom: 1rem;
 }
 
+.team-members-grid > .team-card:nth-last-child(1):nth-child(3n + 1) {
+    grid-column: 2 / span 1;
+}
+
 .team-card .text-content {
     flex: 1;
     display: flex;
