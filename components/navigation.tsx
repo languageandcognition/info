@@ -44,12 +44,23 @@ export function Navigation({ onNavigate }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-6">
+            {/* IIT Madras Logo */}
             <img
-              src="https://res.cloudinary.com/dt8amwctw/image/upload/v1749980465/lcl2-removebg-preview_g6aof2.png"
-              alt="LC Lab"
-              className="h-10 w-auto"
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
+                alt="IIT Madras Logo"
+                className="h-11 w-auto"
             />
+
+            {/* LC Lab Logo */}
+            <img
+                src={isScrolled ? "/darkLogo.png" : "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980465/lcl2-removebg-preview_g6aof2.png"}
+                alt="LC Lab Logo"
+                className="h-10 w-auto transition-all duration-300"
+            />
+
+
+            {/* Text */}
             <div className="hidden sm:block">
               <h1 className={`text-lg font-semibold ${isScrolled ? "text-slate-900" : "text-white"}`}>
                 Language & Cognition Lab
