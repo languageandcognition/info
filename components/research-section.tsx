@@ -25,15 +25,24 @@ export function ResearchSection() {
           {/* Tabs */}
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-12">
-              <TabsTrigger value="projects" className="flex items-center gap-2">
+              <TabsTrigger
+                  value="projects"
+                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md!"
+              >
                 <Users size={16} />
                 Projects
               </TabsTrigger>
-              <TabsTrigger value="publications" className="flex items-center gap-2">
+              <TabsTrigger
+                  value="publications"
+                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md!"
+              >
                 <Award size={16} />
                 Publications
               </TabsTrigger>
-              <TabsTrigger value="conferences" className="flex items-center gap-2">
+              <TabsTrigger
+                  value="conferences"
+                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md!"
+              >
                 <MapPin size={16} />
                 Conferences
               </TabsTrigger>
@@ -81,7 +90,7 @@ export function ResearchSection() {
                           {pub.publisher && `, ${pub.publisher}`}
                         </p>
                         {(pub.doi || pub.link) && (
-                            <div className="flex items-center text-sm text-blue-600 mt-2">
+                            <div className="zoni flex items-center text-sm text-blue-600 mt-2">
                               <Link2 size={14} className="mr-1" />
                               {pub.doi && <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer">DOI</a>}
                               {pub.doi && pub.link && " | "}

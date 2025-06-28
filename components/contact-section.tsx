@@ -107,7 +107,7 @@ export function ContactSection() {
                   IIT Madras <ExternalLink size={14} />
                 </a>
                 <a
-                  href="https://www.iitm.ac.in/academics/departments/humanities-and-social-sciences"
+                  href="https://hss.iitm.ac.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
@@ -121,10 +121,17 @@ export function ContactSection() {
           {/* Map or Additional Info */}
           <div className="space-y-8">
             <Card className="h-96 bg-slate-100 flex items-center justify-center">
-              <div className="text-center text-slate-500">
-                <MapPin size={48} className="mx-auto mb-4 opacity-50" />
-                <p>Interactive map would be embedded here</p>
-                <p className="text-sm">IIT Madras Campus, Chennai</p>
+              <div className="w-full h-full">
+                <iframe
+                    title="IIT Madras Precise Location"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=12.990073455533864,80.23249482879334&z=18&output=embed"
+                ></iframe>
               </div>
             </Card>
 
