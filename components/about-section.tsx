@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Brain, Eye, Globe, Microscope } from "lucide-react"
+import {Brain, ChevronLeft, ChevronRight, Eye, Globe, Microscope} from "lucide-react"
+import {facilityImages} from "@/lib/data";
 
 const features = [
   {
@@ -29,6 +30,15 @@ const features = [
 export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  const [currentImage, setCurrentImage] = useState(0)
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % facilityImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -92,12 +102,41 @@ export function AboutSection() {
 
             {/* Image */}
             <div className="relative">
-              <img
-                src="https://res.cloudinary.com/dt8amwctw/image/upload/v1749380046/WhatsApp_Image_2025-03-06_at_07.18.54_c27204f6_krc0tl.jpg"
-                alt="Research facility"
-                className="rounded-2xl shadow-2xl w-full h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl" />
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                    src={facilityImages[currentImage] || "/placeholder.svg"}
+                    alt={`Facility ${currentImage + 1}`}
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
+
+              {/* Navigation */}
+              <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+              >
+                <ChevronRight size={20} />
+              </button>
+
+              {/* Dots */}
+              <div className="flex justify-center mt-4 space-x-2">
+                {facilityImages.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setCurrentImage(index)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                            index === currentImage ? "bg-blue-600" : "bg-slate-300"
+                        }`}
+                    />
+                ))}
+              </div>
             </div>
           </div>
 
