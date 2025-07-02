@@ -45,6 +45,7 @@ export interface TeamMember {
 export interface PrincipalInvestigator extends TeamMember {
   title: string
   interests: string
+  phone: string
 }
 
 // Principal Investigator
@@ -56,6 +57,7 @@ export const principalInvestigator: PrincipalInvestigator = {
   research: "Leading research in cross-linguistic syntax and cognitive processing",
   image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749377865/ani_llz6al.jpg",
   email: "anindita@iitm.ac.in",
+  phone: "+91 999999999",
 }
 
 // Team members

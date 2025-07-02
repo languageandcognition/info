@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { principalInvestigator } from "@/lib/data"
+
 export function Footer() {
   return (
     <footer className="bg-slate-900 text-white py-8">
@@ -51,10 +54,14 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
+            <Link href="/contact">
+              <h3 className="font-semibold mb-4 cursor-pointer hover:underline">
+                Contact
+              </h3>
+            </Link>
             <div className="space-y-2 text-sm text-slate-400">
-              <p>anindita@iitm.ac.in</p>
-              <p>+91 (44) 2257 4534</p>
+              <p>{principalInvestigator.email}</p>
+              <p>{principalInvestigator.phone}</p>
               <p>
                 HSB332B, Humanities and Sciences Block
                 <br />

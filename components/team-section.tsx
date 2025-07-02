@@ -1,16 +1,18 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, ExternalLink, Plus } from "lucide-react"
+import { Mail } from "lucide-react"
 import { principalInvestigator, teamMembers, type TeamMember } from "@/lib/data"
 
 export function TeamSection() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
+  const router = useRouter();
 
   return (
-      <section id="team" className="py-20 bg-slate-50">
+      <section id="team" className="pt-32 py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
@@ -92,7 +94,7 @@ export function TeamSection() {
                   We're always looking for passionate researchers to join our lab.
                 </p>
                 <button
-                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() => router.push("/contact")}
                     className="text-blue-600 hover:text-blue-700 font-medium text-xs"
                 >
                   Get in touch

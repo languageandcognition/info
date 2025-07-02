@@ -6,11 +6,11 @@ import { collaborators } from "@/lib/data"
 
 export function CollaborationsSection() {
   return (
-    <section id="collaborations" className="py-20 bg-slate-50">
+    <section id="collaborations" className="pt-32 py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Global Collaborations</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Collaborations</h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Building bridges across continents to advance language and cognition research through international
             partnerships.

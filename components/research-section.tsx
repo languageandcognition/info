@@ -9,9 +9,28 @@ import { Calendar, MapPin, Users, Award, Link2 } from "lucide-react"
 
 export function ResearchSection() {
   const [activeTab, setActiveTab] = useState("projects")
+  const [projectPage, setProjectPage] = useState(0)
+  const [publicationPage, setPublicationPage] = useState(0)
+  const [conferencePage, setConferencePage] = useState(0)
+
+  const itemsPerPage = 6
+
+  // Split data into chunks of 6
+  const projectChunks = []
+  for (let i = 0; i < researchProjects.length; i += itemsPerPage) {
+    projectChunks.push(researchProjects.slice(i, i + itemsPerPage))
+  }
+  const publicationChunks = []
+  for (let i = 0; i < publications.length; i += itemsPerPage) {
+    publicationChunks.push(publications.slice(i, i + itemsPerPage))
+  }
+  const conferenceChunks = []
+  for (let i = 0; i < conferences.length; i += itemsPerPage) {
+    conferenceChunks.push(conferences.slice(i, i + itemsPerPage))
+  }
 
   return (
-      <section id="research" className="py-20 bg-white">
+      <section id="research" className="pt-32 py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
@@ -27,21 +46,21 @@ export function ResearchSection() {
             <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-12">
               <TabsTrigger
                   value="projects"
-                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md!"
+                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md"
               >
                 <Users size={16} />
                 Projects
               </TabsTrigger>
               <TabsTrigger
                   value="publications"
-                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md!"
+                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md"
               >
                 <Award size={16} />
                 Publications
               </TabsTrigger>
               <TabsTrigger
                   value="conferences"
-                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md!"
+                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md"
               >
                 <MapPin size={16} />
                 Conferences
@@ -51,7 +70,7 @@ export function ResearchSection() {
             {/* Projects */}
             <TabsContent value="projects" className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                {researchProjects.map((project, index) => (
+                {projectChunks[projectPage]?.map((project, index) => (
                     <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                       <CardContent className="p-6">
                         <div className="flex justify-between items-start mb-4">
@@ -69,15 +88,28 @@ export function ResearchSection() {
                         </div>
                       </CardContent>
                     </Card>
-                ))}
+                )) || <p className="text-slate-600">No projects available.</p>}
               </div>
+              {projectChunks.length > 1 && (
+                  <div className="flex justify-center mt-4 space-x-2">
+                    {projectChunks.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setProjectPage(index)}
+                            className={`w-2 h-2 rounded-full transition-all ${
+                                index === projectPage ? "bg-blue-600" : "bg-slate-300"
+                            }`}
+                        />
+                    ))}
+                  </div>
+              )}
             </TabsContent>
 
             {/* Publications */}
             <TabsContent value="publications" className="space-y-6">
-              <div className="space-y-4">
-                {publications.map((pub, index) => (
-                    <Card key={index} className="hover:shadow-md transition-all duration-300">
+              <div className="grid md:grid-cols-2 gap-6">
+                {publicationChunks[publicationPage]?.map((pub, index) => (
+                    <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                       <CardContent className="p-6">
                         <div className="flex justify-between items-start mb-2">
                           <h3 className="text-lg font-semibold text-slate-900 flex-1 mr-4">{pub.title}</h3>
@@ -90,23 +122,44 @@ export function ResearchSection() {
                           {pub.publisher && `, ${pub.publisher}`}
                         </p>
                         {(pub.doi || pub.link) && (
-                            <div className="zoni flex items-center text-sm text-blue-600 mt-2">
+                            <div className="flex items-center text-sm text-blue-600 mt-2">
                               <Link2 size={14} className="mr-1" />
-                              {pub.doi && <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer">DOI</a>}
+                              {pub.doi && (
+                                  <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer">
+                                    DOI
+                                  </a>
+                              )}
                               {pub.doi && pub.link && " | "}
-                              {pub.link && <a href={pub.link} target="_blank" rel="noopener noreferrer">Link</a>}
+                              {pub.link && (
+                                  <a href={pub.link} target="_blank" rel="noopener noreferrer">
+                                    Link
+                                  </a>
+                              )}
                             </div>
                         )}
                       </CardContent>
                     </Card>
-                ))}
+                )) || <p className="text-slate-600">No publications available.</p>}
               </div>
+              {publicationChunks.length > 1 && (
+                  <div className="flex justify-center mt-4 space-x-2">
+                    {publicationChunks.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setPublicationPage(index)}
+                            className={`w-2 h-2 rounded-full transition-all ${
+                                index === publicationPage ? "bg-blue-600" : "bg-slate-300"
+                            }`}
+                        />
+                    ))}
+                  </div>
+              )}
             </TabsContent>
 
             {/* Conferences */}
             <TabsContent value="conferences" className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                {conferences.map((conf, index) => (
+                {conferenceChunks[conferencePage]?.map((conf, index) => (
                     <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                       <CardContent className="p-6">
                         <div className="flex justify-between items-start mb-4">
@@ -133,8 +186,21 @@ export function ResearchSection() {
                         </div>
                       </CardContent>
                     </Card>
-                ))}
+                )) || <p className="text-slate-600">No conferences available.</p>}
               </div>
+              {conferenceChunks.length > 1 && (
+                  <div className="flex justify-center mt-4 space-x-2">
+                    {conferenceChunks.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setConferencePage(index)}
+                            className={`w-2 h-2 rounded-full transition-all ${
+                                index === conferencePage ? "bg-blue-600" : "bg-slate-300"
+                            }`}
+                        />
+                    ))}
+                  </div>
+              )}
             </TabsContent>
           </Tabs>
         </div>

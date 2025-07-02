@@ -2,10 +2,11 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react"
+import { principalInvestigator } from "@/lib/data"
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="pt-32 py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -30,10 +31,9 @@ export function ContactSection() {
                       <div>
                         <h4 className="font-semibold text-slate-900 mb-1">Email</h4>
                         <a
-                          href="mailto:anindita@iitm.ac.in"
                           className="text-blue-600 hover:text-blue-700 transition-colors"
                         >
-                          anindita@iitm.ac.in
+                          {principalInvestigator.email}
                         </a>
                       </div>
                     </div>
@@ -48,7 +48,7 @@ export function ContactSection() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-slate-900 mb-1">Phone</h4>
-                        <p className="text-slate-600">+91 (44) 2257 4534</p>
+                        <p className="text-slate-600">{principalInvestigator.phone}</p>
                       </div>
                     </div>
                   </CardContent>
