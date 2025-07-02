@@ -1,4 +1,4 @@
-// Research projects (reversed: most recent first)
+// Research projects (most recent first)
 export const researchProjects = [
     {
         title: "Climate Change, Language Vulnerability, and Culture Death",
@@ -44,7 +44,7 @@ export const researchProjects = [
     },
 ]
 
-// Publications (reversed: most recent first)
+// Publications (most recent first)
 export const publications = [
     {
         title: "Versatile copulas and their stance-marking uses in conversational Odia, an Indo-Aryan language",
@@ -122,7 +122,7 @@ export const publications = [
     },
 ]
 
-// Conferences (reversed: most recent first)
+// Conferences (most recent first)
 export const conferences = [
     {
         title: "Definiteness marking and de-honorification in Odia, an eastern Indo-Aryan language",

@@ -130,7 +130,7 @@ export function ContactSection() {
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps?q=12.990073455533864,80.23249482879334&z=18&output=embed"
+                    src="https://www.google.com/maps?q=12.989725,80.232165&z=18&output=embed&layer=s"
                 ></iframe>
               </div>
             </Card>
