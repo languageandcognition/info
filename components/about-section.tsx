@@ -12,7 +12,7 @@ const features = [
   },
   {
     icon: Eye,
-    title: "Eye-tracking Research",
+    title: "Eye-tracking research",
     description: "Advanced eye-tracking technology to study real-time language processing",
   },
   {

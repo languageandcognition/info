@@ -341,7 +341,7 @@ export const teamMembers: TeamMember[] = [
   },
 ]
 
-// Research projects
+// research projects
 export const researchProjects = [
   {
     title: "Morphosyntax and Discourse Pragmatics",
@@ -368,7 +368,7 @@ export const researchProjects = [
     title: "Navigating Grammatical Voice to Explore Communication Strategies",
     description:
         "A cross-linguistic study of select Indo-Aryan and Dravidian languages examining how grammatical voice systems facilitate different communication strategies across diverse linguistic communities.",
-    sponsor: "Indian Council of Social Science Research (ICSSR), New Delhi",
+    sponsor: "Indian Council of Social Science research (ICSSR), New Delhi",
     year: "2023-2026"
   },
   {
@@ -444,7 +444,7 @@ export const publications = [
   {
     title: "Evoking Emotions and Eliciting Heart-Felt Responses through Exclamatives: Unravelling the Potential of 'aiyyoo' in the English Language",
     authors: ["George R.", "Sahoo A."],
-    journal: "English Linguistics Research",
+    journal: "English Linguistics research",
     volume: "13(1)",
     year: "2024"
   },
@@ -622,7 +622,7 @@ export const conferences = [
   {
     title: "Definiteness marking and de-honorification in Odia, an eastern Indo-Aryan language",
     authors: ["Foong Ha Yap", "Anindita Sahoo"],
-    conference: "Annual Research Forum",
+    conference: "Annual research Forum",
     organizer: null,
     location: "Hong Kong",
     date: "8th Dec 2024"
@@ -645,7 +645,7 @@ export const collaborators = [
   },
   {
     name: "Prof. Marcel den Dikken",
-    institution: "Hungarian Research Centre for Linguistics",
+    institution: "Hungarian research Centre for Linguistics",
     country: "Hungary",
     image: "https://linguistics.blcu.edu.cn/__local/1/2C/72/CC8C92DE545727AF2C84D109DCB_B65AE196_A911.gif",
   },
