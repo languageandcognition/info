@@ -2,8 +2,6 @@
 
 This is the official website for the **Language & Cognition Lab** at **IIT Madras**, designed to showcase the lab's research, team, collaborations, and experimental facilities.
 
-🔗 **Visit the website:** [Website](https://languageandcognition.github.io/info/)
-
 ---
 
 ### 🧠 About the Lab
