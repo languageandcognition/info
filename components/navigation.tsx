@@ -1,15 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
+  const isHomePage = pathname === "/"
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(!isHomePage)
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -20,13 +21,24 @@ export function Navigation() {
     { label: "Contact", href: "/contact" },
   ]
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 50)
   }, [])
+
+  useEffect(() => {
+    if (isHomePage) {
+      // Set initial scroll state on mount
+      const initialScroll = typeof window !== "undefined" ? window.scrollY > 50 : false
+      setIsScrolled(initialScroll)
+
+      // Add scroll event listener
+      window.addEventListener("scroll", handleScroll, { passive: true })
+      return () => window.removeEventListener("scroll", handleScroll)
+    } else {
+      // Ensure non-home pages always use dark theme
+      setIsScrolled(true)
+    }
+  }, [isHomePage, handleScroll])
 
   return (
       <nav
@@ -43,6 +55,9 @@ export function Navigation() {
                   src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
                   alt="IIT Madras Logo"
                   className="h-11 w-auto"
+                  onError={(e) => {
+                    e.currentTarget.src = "/placeholder.svg" // Fallback image
+                  }}
               />
 
               {/* LC Lab Logo */}
@@ -50,6 +65,9 @@ export function Navigation() {
                   src={isScrolled ? "/darkLogo.png" : "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980465/lcl2-removebg-preview_g6aof2.png"}
                   alt="LC Lab Logo"
                   className="h-10 w-auto transition-all duration-300"
+                  onError={(e) => {
+                    e.currentTarget.src = "/placeholder.svg" // Fallback image
+                  }}
               />
 
               {/* Text */}

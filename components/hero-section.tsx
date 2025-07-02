@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react"
 import { multilingualChars } from "@/lib/data"
 
@@ -14,6 +15,7 @@ interface FloatingChar {
 
 export function HeroSection() {
   const [floatingChars, setFloatingChars] = useState<FloatingChar[]>([])
+  const router = useRouter();
 
   useEffect(() => {
     const chars: FloatingChar[] = []
@@ -64,13 +66,13 @@ export function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
-              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => router.push("/research")}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Explore Our Research
             </button>
             <button
-              onClick={() => document.getElementById("team")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => router.push("/team")}
               className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-300"
             >
               Meet the Team

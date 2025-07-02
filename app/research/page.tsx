@@ -2,7 +2,7 @@
 
 import { ResearchSection } from "@/components/research-section"
 
-export default function Research() {
+export default function ResearchPage() {
     return (
         <div className="min-h-screen bg-white">
             <ResearchSection />

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { researchProjects, publications, conferences } from "@/lib/data"
+import { researchProjects, publications, conferences } from "@/lib/researchData"
 import { Calendar, MapPin, Users, Award, Link2 } from "lucide-react"
 
 export function ResearchSection() {

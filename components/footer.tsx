@@ -27,22 +27,22 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#research" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/research" className="text-slate-400 hover:text-white transition-colors">
                   Research
                 </a>
               </li>
               <li>
-                <a href="#team" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/team" className="text-slate-400 hover:text-white transition-colors">
                   Team
                 </a>
               </li>
               <li>
-                <a href="#facilities" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/facilities" className="text-slate-400 hover:text-white transition-colors">
                   Facilities
                 </a>
               </li>
               <li>
-                <a href="#collaborations" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/collaborations" className="text-slate-400 hover:text-white transition-colors">
                   Collaborations
                 </a>
               </li>
