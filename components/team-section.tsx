@@ -4,7 +4,6 @@ import { useState } from "react"
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail } from "lucide-react"
 import { principalInvestigator, teamMembers, type TeamMember } from "@/lib/data"
 
 export function TeamSection() {
@@ -43,20 +42,25 @@ export function TeamSection() {
                     <p className="text-slate-700 mb-6 leading-relaxed">
                       <strong>Research Interests:</strong> {principalInvestigator.interests}
                     </p>
-                    {principalInvestigator.email && (
-                        <a
-                            href={`mailto:${principalInvestigator.email}`}
-                            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
-                        >
-                          <Mail size={16} />
-                          {principalInvestigator.email}
-                        </a>
-                    )}
+                    <a
+                        href={principalInvestigator.linkedInLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 hover:underline"
+                    >
+                      <img
+                          src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                          alt="LinkedIn"
+                          className="w-5 h-5"
+                      />
+                      LinkedIn
+                    </a>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
+
 
           {/* PhD Scholars */}
           <div>

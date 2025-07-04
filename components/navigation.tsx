@@ -17,6 +17,7 @@ export function Navigation() {
         {label: "Research", href: "/research"},
         {label: "Team", href: "/team"},
         {label: "Facilities", href: "/facilities"},
+        {label: "Events", href: "/events"},
         {label: "Collaborations", href: "/collaborations"},
         {label: "Friends", href: "/friends"},
         {label: "Contact", href: "/contact"},

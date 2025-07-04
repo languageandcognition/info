@@ -134,25 +134,6 @@ export function ContactSection() {
                 ></iframe>
               </div>
             </Card>
-
-            {/* Call to Action */}
-            <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">Join Our Research Community</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Whether you're a prospective student, visiting researcher, or potential collaborator, we welcome
-                  inquiries about joining our dynamic research environment.
-                </p>
-                <div className="space-y-3">
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105">
-                    Schedule a Visit
-                  </button>
-                  <button className="w-full border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition-all duration-300">
-                    Download Lab Brochure
-                  </button>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
