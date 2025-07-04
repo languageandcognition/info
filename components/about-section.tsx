@@ -86,18 +86,18 @@ export function AboutSection() {
                 institutions worldwide, we investigate how linguistic structures interact with cognitive processes,
                 cultural contexts, and technological applications.
               </p>
-              <div className="pt-4">
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <div className="text-2xl font-bold text-blue-600">15+</div>
-                    <div className="text-sm text-slate-600">Active Projects</div>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <div className="text-2xl font-bold text-blue-600">8</div>
-                    <div className="text-sm text-slate-600">Languages Studied</div>
-                  </div>
-                </div>
-              </div>
+              {/*<div className="pt-4">*/}
+              {/*  <div className="grid grid-cols-2 gap-4 text-center">*/}
+              {/*    <div className="bg-white p-4 rounded-lg shadow-sm">*/}
+              {/*      <div className="text-2xl font-bold text-blue-600">15+</div>*/}
+              {/*      <div className="text-sm text-slate-600">Active Projects</div>*/}
+              {/*    </div>*/}
+              {/*    <div className="bg-white p-4 rounded-lg shadow-sm">*/}
+              {/*      <div className="text-2xl font-bold text-blue-600">8</div>*/}
+              {/*      <div className="text-sm text-slate-600">Languages Studied</div>*/}
+              {/*    </div>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
             </div>
 
             {/* Image */}

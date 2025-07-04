@@ -108,6 +108,12 @@ export const collaborators = [
         country: "India",
         image: "https://biotech.iitm.ac.in/img/outerfaculty/Srinivasa%20chakravarthy.png",
     },
+    {
+        name: "Prof. Preeti Aghalayam",
+        institution: "Indian Institute of Technology Madras",
+        country: "India",
+        image: "https://www.iitmz.ac.in/_next/image?url=%2Fpreeti.jpg&w=256&q=75",
+    },
 ]
 
 // Facility images
@@ -121,9 +127,9 @@ export const facilityImages = [
 ]
 
 export const eventImages = [
+    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630995/image4_wzyuto.jpg",
     "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630998/image10_srzi3c.jpg",
     "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630996/image11_f4jh96.jpg",
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630995/image4_wzyuto.jpg",
     "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630995/image5_jdwjwd.jpg",
     "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630994/image3_aayfqu.jpg",
 ]

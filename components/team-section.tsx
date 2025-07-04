@@ -26,41 +26,56 @@ export function TeamSection() {
             <h3 className="text-2xl font-semibold text-slate-900 mb-8 text-center">Principal Investigator</h3>
             <Card className="max-w-4xl mx-auto shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-8">
-                <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
-                  <div className="relative">
+                <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
+                  <div className="relative flex-shrink-0">
                     <img
                         src={principalInvestigator.image || "/placeholder.svg"}
                         alt={principalInvestigator.name}
-                        className="w-48 h-48 rounded-2xl object-cover shadow-lg"
+                        className="w-48 h-full rounded-2xl object-cover shadow-lg"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl" />
                   </div>
-                  <div className="flex-1 text-center lg:text-left">
-                    <Badge className="mb-3">{principalInvestigator.role}</Badge>
-                    <h4 className="text-3xl font-bold text-slate-900 mb-2">{principalInvestigator.name}</h4>
-                    <p className="text-lg text-slate-600 mb-4">{principalInvestigator.title}</p>
-                    <p className="text-slate-700 mb-6 leading-relaxed">
-                      <strong>Research Interests:</strong> {principalInvestigator.interests}
-                    </p>
-                    <a
-                        href={principalInvestigator.linkedInLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 hover:underline"
-                    >
-                      <img
-                          src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-                          alt="LinkedIn"
-                          className="w-5 h-5"
-                      />
-                      LinkedIn
-                    </a>
+                  <div className="flex-1 text-center lg:text-left flex flex-col justify-between">
+                    <div>
+                      <h4 className="text-3xl font-bold text-slate-900 mb-2">{principalInvestigator.name}</h4>
+                      <p className="text-lg text-slate-600 mb-4">{principalInvestigator.title}</p>
+                      <p className="text-slate-700 mb-6 leading-relaxed">
+                        <strong>Research Interests:</strong> {principalInvestigator.interests}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-center lg:justify-start gap-4">
+                      <a
+                          href={principalInvestigator.linkedInLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 hover:underline"
+                      >
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                            alt="LinkedIn"
+                            className="w-5 h-5"
+                        />
+                        LinkedIn
+                      </a>
+                      <a
+                          href="https://hss.iitm.ac.in/anindita-sahoo/#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 hover:underline"
+                      >
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
+                            alt="IITM"
+                            className="w-5 h-5 object-contain"
+                        />
+                        IITM
+                      </a>
+                    </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
-
 
           {/* PhD Scholars */}
           <div>

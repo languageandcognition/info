@@ -60,7 +60,7 @@ export function EventsSection() {
     useEffect(() => {
         const interval = setInterval(() => {
             nextImage()
-        }, 2000)
+        }, 3000)
 
         return () => clearInterval(interval)
     }, [])
