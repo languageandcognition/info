@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { BookOpen, ChevronLeft, ChevronRight, Calendar, MapPin, Users } from "lucide-react"
-import { eventImages } from "@/lib/data"
+import { eventImages } from "@/lib/imagesData"
 
 const events = [
     {
@@ -71,7 +71,7 @@ export function EventsSection() {
                 <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
                     {/* Header */}
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Events Conducted</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold text-[#254D70] text-center mb-8 border-b-4 border-[#954C2E] inline-block w-full pb-4">Events Conducted</h2>
                         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                             We hosted exciting events that advanced the study of language and cognition through collaboration and innovation.
                         </p>

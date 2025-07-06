@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import {Brain, ChevronLeft, ChevronRight, Eye, Globe, Microscope} from "lucide-react"
-import {facilityImages} from "@/lib/data";
+import {facilityImages} from "@/lib/imagesData";
 
 const features = [
   {
@@ -42,12 +42,12 @@ export function AboutSection() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 },
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          }
+        },
+        { threshold: 0.1 },
     )
 
     if (sectionRef.current) {
@@ -57,6 +57,13 @@ export function AboutSection() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImage()
+    }, 6000)
+
+    return () => clearInterval(interval)
+  }, [])
   return (
     <section ref={sectionRef} id="about" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -34,7 +34,7 @@ export function ResearchSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Research Portfolio</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#254D70] text-center mb-8 border-b-4 border-[#954C2E] inline-block w-full pb-4">Research Portfolio</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Discover our ongoing projects, publications, and contributions to the field of language and cognition
               research.

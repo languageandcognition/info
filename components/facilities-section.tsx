@@ -2,7 +2,7 @@
 
 import {Card, CardContent} from "@/components/ui/card"
 import {Badge} from "@/components/ui/badge"
-import {Eye, Monitor, Cpu, Database, ChevronLeft, ChevronRight} from "lucide-react"
+import {Eye, Monitor, Cpu, Database} from "lucide-react"
 
 
 const equipment = [
@@ -18,18 +18,6 @@ const equipment = [
         description: "Dedicated workstations for psycholinguistic experiments",
         specs: "High-resolution displays, audio recording",
     },
-    {
-        icon: Cpu,
-        name: "Computing Cluster",
-        description: "High-performance computing for data analysis and modeling",
-        specs: "Multi-core processors, GPU acceleration",
-    },
-    {
-        icon: Database,
-        name: "Data Infrastructure",
-        description: "Secure storage and management of research data",
-        specs: "Encrypted storage, backup systems",
-    },
 ]
 
 export function FacilitiesSection() {
@@ -38,7 +26,7 @@ export function FacilitiesSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Research Facilities</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-[#254D70] text-center mb-8 border-b-4 border-[#954C2E] inline-block w-full pb-4">Research Facilities</h2>
                     <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                         State-of-the-art equipment and infrastructure supporting cutting-edge language and cognition
                         research.
@@ -89,17 +77,22 @@ export function FacilitiesSection() {
                 </div>
 
                 {/* Equipment Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-2 gap-6">
                     {equipment.map((item, index) => (
                         <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <CardContent className="p-6 text-center">
-                                <div
-                                    className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                    <item.icon className="text-blue-600" size={24}/>
+                            <CardContent className="p-6">
+                                <div className="flex items-stretch gap-4">
+                                    <div className="flex-shrink-0">
+                                        <div className="bg-blue-100 rounded-lg flex items-center justify-center p-4 h-full min-h-[80px]">
+                                            <item.icon className="text-blue-600" size={32}/>
+                                        </div>
+                                    </div>
+                                    <div className="flex-1">
+                                        <h4 className="text-lg font-semibold text-slate-900 mb-2">{item.name}</h4>
+                                        <p className="text-slate-600 text-sm mb-3 leading-relaxed">{item.description}</p>
+                                        <p className="text-xs text-slate-500">{item.specs}</p>
+                                    </div>
                                 </div>
-                                <h4 className="text-lg font-semibold text-slate-900 mb-2">{item.name}</h4>
-                                <p className="text-slate-600 text-sm mb-3 leading-relaxed">{item.description}</p>
-                                <p className="text-xs text-slate-500">{item.specs}</p>
                             </CardContent>
                         </Card>
                     ))}

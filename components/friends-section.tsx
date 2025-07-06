@@ -12,7 +12,7 @@ export function FriendsSection() {
           The linguistics-enthusiast crew that offered help in setting up the lab—from naming it to creating the logo
           and website.
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {friends.map((friend, index) => (
             <Card
               key={index}

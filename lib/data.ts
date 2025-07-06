@@ -22,7 +22,7 @@ export const principalInvestigator: PrincipalInvestigator = {
     interests: "Syntax, Pragmatics, Language Processing, Eye-tracking, Cognition Studies",
     research: "Leading research in cross-linguistic syntax and cognitive processing",
     image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749377865/ani_llz6al.jpg",
-    email: "anindita@iitm.ac.in",
+    email: "aslinguistics.iitm@gmail.com",
     phone: "+91 (44) 2257 4534",
     linkedInLink: "https://www.linkedin.com/in/anindita-sahoo-3b971515/",
 }
@@ -66,13 +66,38 @@ export const teamMembers: TeamMember[] = [
         research: "On the Interaction of Honorification, Copula and Definiteness: A Variationist Approach",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/pratiti_amhwlv.jpg",
     },
+]
+
+export const othersMembers: TeamMember[] = [
     {
         name: "Ruby George",
-        role: "PhD Scholar",
+        role: "Co-Guided",
         research:
             "Persuasion in Public Service Advertising: Creating Changes Through Creative Strategies in the Print Media",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/ruby_l2mqos.jpg",
     },
+    {
+        name: "G L Vijayavani",
+        role: "Co-Guiding",
+        research:
+            "Identifying Gender Bias in Indian Academic Institutional Communication: A Dual Approach Using Text Analysis and Stakeholder Perception",
+        image: "",
+    }
+]
+
+export const researchStaff: TeamMember[] = [
+    {
+        name: "Nayana Rajan",
+        role: "Research Staff",
+        research: "",
+        image: "",
+    },
+    {
+        name: "Suchitra Chakraborty",
+        role: "Research Staff",
+        research: "",
+        image: "",
+    }
 ]
 
 // Collaborators
@@ -111,27 +136,9 @@ export const collaborators = [
     {
         name: "Prof. Preeti Aghalayam",
         institution: "Indian Institute of Technology Madras",
-        country: "India",
+        country: "Tanzania",
         image: "https://www.iitmz.ac.in/_next/image?url=%2Fpreeti.jpg&w=256&q=75",
     },
-]
-
-// Facility images
-export const facilityImages = [
-    "https://res.cloudinary.com/dt8amwctw/image/upload/v1749380046/WhatsApp_Image_2025-03-06_at_07.18.54_c27204f6_krc0tl.jpg",
-    "https://res.cloudinary.com/dt8amwctw/image/upload/v1749380045/WhatsApp_Image_2025-03-06_at_07.20.37_021a4179_tndnpw.jpg",
-    "https://res.cloudinary.com/dt8amwctw/image/upload/v1749380045/WhatsApp_Image_2025-03-06_at_07.25.41_6a09db76_badyni.jpg",
-    "https://res.cloudinary.com/dt8amwctw/image/upload/v1749380045/WhatsApp_Image_2025-03-06_at_07.23.48_7912f5cd_wivr9i.jpg",
-    "https://res.cloudinary.com/dt8amwctw/image/upload/v1749380045/WhatsApp_Image_2025-03-06_at_07.20.37_069fcc79_ofdtsi.jpg",
-    "https://res.cloudinary.com/dt8amwctw/image/upload/v1750747942/facility_6_egv4ki.jpg",
-]
-
-export const eventImages = [
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630995/image4_wzyuto.jpg",
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630998/image10_srzi3c.jpg",
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630996/image11_f4jh96.jpg",
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630995/image5_jdwjwd.jpg",
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630994/image3_aayfqu.jpg",
 ]
 
 // Friends data (legacy compatibility)
@@ -145,6 +152,11 @@ export const friends = [
         name: "Shobhith Vadlamudi",
         contribution: "Co-created the logo",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1750746877/shobhit_e8zraw.jpg",
+    },
+    {
+        name: "Gadarla Rohit Reddy",
+        contribution: "Co-designed the website",
+        image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1750746876/rohit_o1zjut.jpg",
     },
     {
         name: "Gadarla Ritesh Reddy",
